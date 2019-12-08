@@ -11,7 +11,7 @@ body{
     left:50%;
     transform: translateX(-50%) translateY(-50%);
     background: rgba(255, 255, 255, 0.5);
-    padding: 10px;
+    padding: 20px;
     border: 2px solid black;
     box-shadow: 0 0 8px 3px white;
 
@@ -23,4 +23,59 @@ body{
     font-size: 36px;
     text-transform: uppercase;
     color: blue;
+}
+
+.question {
+    padding: 20px;
+    font-size: 22px;
+    background: silver;
+    border-radius: 20px;
+    margin: 10px 0 10px 0;
+    color: pink;
+
+}
+
+.option {
+    width: 470px;
+    display: inline-block;
+    padding: 10px 0 10px 15px;
+    vertical-align: middle;
+    background: rgba(255, 255, 255, 0.5);
+    margin: 10px 0 10px 10px;
+    color: green;
+    border-radius: 20px;
+}
+
+.option:hover {
+    background: yellow;
+    color:orange;
+}
+
+.next-btn{
+    border: none;
+    outline: none;
+    background: rgba(255, 25, 255, 0.5);
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    cursor: pointer;
+    float: right;
+    margin:10px;
+}
+
+.next-btn:hover {
+    background: red;
+    color: wheat;
+}
+
+.result {
+    height: 100px;
+    text-align: center;
+    font-size: 75px;
+
+}
+
+.option input:checked .option{
+    background: aquamarine;
+    color: burlywood;
 }

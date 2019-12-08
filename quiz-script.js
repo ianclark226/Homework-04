@@ -21,14 +21,14 @@ function loadQuestion (questionIndex) {
 
 };
 
-fucntion loadNextQuestion () {
+function loadNextQuestion () {
     var selectedOption = document.querySelector('input[type=radio]:checked');
     if(!selectedOption) {
         alert('Select Answer!');
         return;
     }
     var answer = selectedOption.value;
-    if(questions[currentQuestion].answer == ) {
+    if(questions[currentQuestion].answer == answer) {
         score += 5;
     }
     
@@ -48,5 +48,5 @@ fucntion loadNextQuestion () {
     loadQuestion(currentQuestion);
 }
 loadQuestion(currentQuestion);
-}
+
 
