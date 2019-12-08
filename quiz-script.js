@@ -3,7 +3,8 @@ var score = 0;
 var TotalQuestions = questions.length;
 var timeEl = document.querySelector(".time");
 var mainEl = document.querySelector(".main");
-var secondsLeft = 75;
+var secondsLeft = 5;
+
 
 var container = document.getElementById('quizContainer');
 var questionEl = document.getElementById('question');
@@ -13,15 +14,19 @@ var opt3 = document.getElementById('opt3');
 var opt4 = document.getElementById('opt4');
 var nextButton = document.getElementById('nextButton');
 var resultCont = document.getElementById('result');
+var gameoverCont = document.getElementById('gameover');
 
 function setTime() {
     var timerInterval = setInterval(function() {
       secondsLeft--;
       timeEl.textContent = "Time left: " + secondsLeft;
   
-      if(secondsLeft === 0) {
+      if(secondsLeft <= 0) {
         clearInterval(timerInterval);
-        sendMessage();
+        container.style.display = 'none';
+        gameoverCont.style.display = '';
+        gameoverCont.textContent='Times up!';
+        return;
       }
   
     }, 1000);
@@ -56,12 +61,17 @@ function loadNextQuestion () {
     var answer = selectedOption.value;
     if(questions[currentQuestion].answer == answer) {
         score += 10;
+    } else {
+            secondsLeft-=10; 
+        
     }
+
+  
     
     selectedOption.checked = false;
     currentQuestion++;
     if(currentQuestion == TotalQuestions - 1) {
-        secondsLeft - 15;
+       
         nextButton.textContent = 'Finish';
     }
 

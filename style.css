@@ -79,3 +79,9 @@ body{
     background: aquamarine;
     color: lavender;
 }
+
+.gameover {
+    height: 100px;
+    text-align: center;
+    font-size: 75px;
+}
