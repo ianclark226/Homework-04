@@ -13,7 +13,7 @@ var resultCont = document.getElementById('result');
 
 function loadQuestion (questionIndex) {
     var q = questions[questionIndex];
-    questionEl.textContent = (questionIndex + 1) + '.' + q.question;
+    questionEl.textContent = (questionIndex + 1) + '. ' + q.question;
     opt1.textContent = q.option1;
     opt2.textContent = q.option2;
     opt3.textContent = q.option3;
@@ -32,7 +32,7 @@ function loadNextQuestion () {
         score += 5;
     }
     
-    selectedOption.checkec = false;
+    selectedOption.checked = false;
     currentQuestion++;
     if(currentQuestion == TotalQuestions - 1) {
         nextButton.textContent = 'Finish';
@@ -41,12 +41,13 @@ function loadNextQuestion () {
     if(currentQuestion == TotalQuestions){
         container.style.display = 'none';
         resultCont.style.display = '';
-        resultCont.textContent = 'Score:' + score;
+        resultCont.textContent = ' Your Score: ' + score;
         return;
 
     }
     loadQuestion(currentQuestion);
 }
 loadQuestion(currentQuestion);
+
 
 

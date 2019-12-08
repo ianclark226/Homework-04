@@ -41,7 +41,7 @@ var questions = [{
     "option3": "PX Attack",
     "option4": "Super Awesome Attack",
     "answer": "1"   
-}, {
+
 
 }, {
 
@@ -62,11 +62,28 @@ var questions = [{
 
 },{
 
-    "question": "",
-    "option1": "",
-    "option2": "",
-    "option3": "",
-    "option4": "",
+    "question": "How many pokemon can you have on your bench?",
+    "option1": "3",
+    "option2": "none",
+    "option3": "6",
+    "option4": "5",
+    "answer": "4"
+
+}, {
+
+    "question": "How many card can you have in your deck with the same name?",
+    "option1": "3",
+    "option2": "4",
+    "option3": "5",
+    "option4": "unlimited",
+    "answer": "2"
+}, {
+
+    "question": "How many cards are you allowed to have in your deck?",
+    "option1": "40",
+    "option2": "50",
+    "option3": "60",
+    "option4": "100",
     "answer": "3"
 
 }]
