@@ -1,8 +1,11 @@
 var currentQuestion = 0;
 var score = 0;
 var TotalQuestions = questions.length;
+var timeEl = document.querySelector(".time");
+var mainEl = document.querySelector(".main");
+var secondsLeft = 75;
 
-var continer = document.getElementById('quizContainer');
+var container = document.getElementById('quizContainer');
 var questionEl = document.getElementById('question');
 var opt1 = document.getElementById('opt1');
 var opt2 = document.getElementById('opt2');
@@ -10,6 +13,29 @@ var opt3 = document.getElementById('opt3');
 var opt4 = document.getElementById('opt4');
 var nextButton = document.getElementById('nextButton');
 var resultCont = document.getElementById('result');
+
+function setTime() {
+    var timerInterval = setInterval(function() {
+      secondsLeft--;
+      timeEl.textContent = "Time left: " + secondsLeft;
+  
+      if(secondsLeft === 0) {
+        clearInterval(timerInterval);
+        sendMessage();
+      }
+  
+    }, 1000);
+  }
+
+  function sendMessage() {
+    timeEl.textContent = " ";
+  
+
+    mainEl.appendChild();
+  
+  }
+  
+  setTime();
 
 function loadQuestion (questionIndex) {
     var q = questions[questionIndex];
@@ -29,12 +55,13 @@ function loadNextQuestion () {
     }
     var answer = selectedOption.value;
     if(questions[currentQuestion].answer == answer) {
-        score += 5;
+        score += 10;
     }
     
     selectedOption.checked = false;
     currentQuestion++;
     if(currentQuestion == TotalQuestions - 1) {
+        secondsLeft - 15;
         nextButton.textContent = 'Finish';
     }
 
