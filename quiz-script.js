@@ -3,7 +3,11 @@ var score = 0;
 var TotalQuestions = questions.length;
 var timeEl = document.querySelector(".time");
 var mainEl = document.querySelector(".main");
-var secondsLeft = 5;
+var secondsLeft = 70;
+var checkmark = new Audio ();
+checkmark.src = "checksound.mp3";
+var wrong = new Audio ();
+wrong.src = "wrongbuz.mp3";
 
 
 var container = document.getElementById('quizContainer');
@@ -15,6 +19,11 @@ var opt4 = document.getElementById('opt4');
 var nextButton = document.getElementById('nextButton');
 var resultCont = document.getElementById('result');
 var gameoverCont = document.getElementById('gameover');
+var restart = document.getElementById('restart');
+
+
+
+
 
 function setTime() {
     var timerInterval = setInterval(function() {
@@ -26,6 +35,8 @@ function setTime() {
         container.style.display = 'none';
         gameoverCont.style.display = '';
         gameoverCont.textContent='Times up!';
+        
+        
         return;
       }
   
@@ -61,8 +72,10 @@ function loadNextQuestion () {
     var answer = selectedOption.value;
     if(questions[currentQuestion].answer == answer) {
         score += 10;
+        checkmark.play();
     } else {
             secondsLeft-=10; 
+            wrong.play();
         
     }
 
@@ -79,6 +92,10 @@ function loadNextQuestion () {
         container.style.display = 'none';
         resultCont.style.display = '';
         resultCont.textContent = ' Your Score: ' + score;
+        timeEl.style.display='none';
+        
+     
+        
         return;
 
     }
