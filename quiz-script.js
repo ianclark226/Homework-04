@@ -18,12 +18,13 @@ var opt3 = document.getElementById('opt3');
 var opt4 = document.getElementById('opt4');
 var nextButton = document.getElementById('nextButton');
 var resultCont = document.getElementById('result');
-var highscore = document.getElementById('hscore');
+var highscoreButton = document.getElementById('hscore');
 var gameoverCont = document.getElementById('gameover');
 var restart = document.getElementById('restart');
 var butn = document.getElementById('butn');
-var standing = document.getElementById('standings');
-const mostRecentScore = localStorage.getItem("mostRecentScore");
+var butn3 = document.getElementById('butn3');
+var standing = document.getElementById('standing');
+var butn2 = document.getElementById('butn2')
 
 
 
@@ -45,6 +46,12 @@ function setTime() {
         
         return;
       }
+        else if(currentQuestion == TotalQuestions) {
+            clearInterval(timerInterval);
+            gameoverCont.style.display = 'none';
+        
+      }
+    
   
     }, 1000);
   }
@@ -99,7 +106,8 @@ function loadNextQuestion () {
         resultCont.style.display = '';
         butn.textContent = ' Your Score: ' + score;
         timeEl.style.display='none';
-        highscore.style.display = 'block';
+        gameoverCont.style.display= 'none';
+        highscoreButton.style.display = '';
         
         return;
 
@@ -108,25 +116,18 @@ function loadNextQuestion () {
 }
 loadQuestion(currentQuestion);
 
-   function standings() {
-       if (highscore == clicked) {
-standing.style.display = '';
-       }
-   }
+highscoreButton.addEventListener("click", function () {
+    resultCont.style.display = 'none';
+    standing.style.display = '';
+    butn2.textContent= "text" + score;
+    localStorage.setItem("score", score);
+    
+});
 
 
 
 
 
-if (highscore !== null) {
-    if (score>highscore) {
-        localStorage.setItem("highscore", score);
-    }
-}
-
-else {
-    localStorage.setItem("highscore", score);
-}
 
 
 

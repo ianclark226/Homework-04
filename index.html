@@ -23,35 +23,36 @@
         <label class="option"><input type="radio" name="option" value="4" /> <span id="opt4"></span></label>
         <button id="nextButton" class="nextBtn" onclick="loadNextQuestion();">NextQuestion</button>
     </div>
+    <button id="restart" onClick="window.location.reload();">Restart</button>
     <div id="result" class="container result" style="display:none;">
 
-        <div id ="butn"> </div>
+        <div id="butn"> </div>
         <div class="textb2">
-        <label>Name :</label>
-    <input type="text" name="" value="" pladceholder="Name">
-        <button id="hscore" class="hiscore" style="display:none;">Highscore </button>
-    </div>
+            <label>Name :</label>
+            <input type="text" name="" value="" pladceholder="Name">
+            <button id="hscore" class="hiscore" style="display:none;">Highscore </button>
+        </div>
         <h2 class="score"></h2>
 
 
 
-        
+
     </div>
 
-    
-    
+
+
 
     <h1 class="time"></h1>
     <div id="main"></div>
-    <div id="standings" class="standing result" style="display:none;">
-    
+    <div id="standing" class="standing result" style="display:none;"></div>
+<div id="butn3"></div>
     <div id="gameover" class="container gameover" style="display:none;">
-        
-        </div>
+
+    </div>
     </div>
 
-        <script src="question.js"></script>
-        <script src="quiz-script.js"></script>
+    <script src="question.js"></script>
+    <script src="quiz-script.js"></script>
 
 </body>
 

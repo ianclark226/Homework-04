@@ -120,10 +120,27 @@ body{
 
 .standing {
     height: 450px;
-    width: 800;
-    text-align: center;
-    font-size: 75px;
+    width: 500px;
+    position: absolute;
+    top:50%;
+    left:50%;
+    transform: translateX(-50%) translateY(-50%);
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    border: 2px solid black;
+    box-shadow: 0 0 8px 3px white;
+}
 
+#restart {
+    border: none;
+    outline: none;
+    background: mediumslateblue;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    cursor: pointer;
+    float: left;
+    margin:10px;
 }
 
 
