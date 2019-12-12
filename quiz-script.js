@@ -1,9 +1,9 @@
 var currentQuestion = 0;
 var score = 0;
-var TotalQuestions = questions.length;
+var TotalQuestions = 1;
 var timeEl = document.querySelector(".time");
 var mainEl = document.querySelector(".main");
-var secondsLeft = 70;
+var secondsLeft = 5;
 var checkmark = new Audio ();
 checkmark.src = "checksound.mp3";
 var wrong = new Audio ();
@@ -18,8 +18,14 @@ var opt3 = document.getElementById('opt3');
 var opt4 = document.getElementById('opt4');
 var nextButton = document.getElementById('nextButton');
 var resultCont = document.getElementById('result');
+var highscore = document.getElementById('hscore');
 var gameoverCont = document.getElementById('gameover');
 var restart = document.getElementById('restart');
+var butn = document.getElementById('butn');
+var standing = document.getElementById('standings');
+const mostRecentScore = localStorage.getItem("mostRecentScore");
+
+
 
 
 
@@ -91,10 +97,9 @@ function loadNextQuestion () {
     if(currentQuestion == TotalQuestions){
         container.style.display = 'none';
         resultCont.style.display = '';
-        resultCont.textContent = ' Your Score: ' + score;
+        butn.textContent = ' Your Score: ' + score;
         timeEl.style.display='none';
-        
-     
+        highscore.style.display = 'block';
         
         return;
 
@@ -102,6 +107,26 @@ function loadNextQuestion () {
     loadQuestion(currentQuestion);
 }
 loadQuestion(currentQuestion);
+
+   function standings() {
+       if (highscore == clicked) {
+standing.style.display = '';
+       }
+   }
+
+
+
+
+
+if (highscore !== null) {
+    if (score>highscore) {
+        localStorage.setItem("highscore", score);
+    }
+}
+
+else {
+    localStorage.setItem("highscore", score);
+}
 
 
 
