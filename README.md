@@ -1,1 +1,3 @@
 # Homework-04
+
+This is my quiz for the homework. I implimented 10 question. When you get an answer right, you get 10 points. When you get one wrong. You lose 10 seconds. If you complete the quiz, it says "Your score:". The one thing that I really struggled on was local storage with all my scores and it is still not completed(issah and quincy both help). I would like to still work on this assignment in the future but more importantly have a better understanding of "local storage".

@@ -1,9 +1,9 @@
 var currentQuestion = 0;
 var score = 0;
-var TotalQuestions = 1;
+var TotalQuestions = 10;
 var timeEl = document.querySelector(".time");
 var mainEl = document.querySelector(".main");
-var secondsLeft = 5;
+var secondsLeft = 100;
 var checkmark = new Audio ();
 checkmark.src = "checksound.mp3";
 var wrong = new Audio ();
@@ -24,7 +24,7 @@ var restart = document.getElementById('restart');
 var butn = document.getElementById('butn');
 var butn3 = document.getElementById('butn3');
 var standing = document.getElementById('standing');
-var butn2 = document.getElementById('butn2')
+
 
 
 
@@ -117,10 +117,28 @@ function loadNextQuestion () {
 loadQuestion(currentQuestion);
 
 highscoreButton.addEventListener("click", function () {
+    debugger
     resultCont.style.display = 'none';
     standing.style.display = '';
-    butn2.textContent= "text" + score;
-    localStorage.setItem("score", score);
+    // score=localStorage.getItem
+    
+   var scores = JSON.parse(localStorage.getItem('score'));
+    if(!scores) {
+        scores = {};
+    }
+
+    var name= document.getElementById('scorename').value;
+
+    scores[name]=score;
+    // localStorage.setItem("score", JSON.stringify(scores));
+
+    var keys = Object.keys(scores);
+    keys.forEach(data => {
+        var ele = document.getElementById("standing")
+        var t = data + " score: " + scores[data]
+        ele.innerText = t;
+        this.append.ele;
+    })
     
 });
 
